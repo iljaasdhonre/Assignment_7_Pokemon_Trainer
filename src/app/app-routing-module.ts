@@ -1,3 +1,5 @@
+import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogue.page';
+import { ProfilePage } from './pages/profile/profile.page';
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 
@@ -12,6 +14,14 @@ const routes: Routes = [
     {
         path: 'login',
         component: LoginPage
+    },
+    {
+        path:'profile',
+        component: ProfilePage
+    },
+    {
+        path:'pokemons',
+        component: PokemonCataloguePage
     }
 ]
 
