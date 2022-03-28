@@ -1,1 +1,11 @@
-<p>login works!</p>
+<form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
+    <fieldset>
+        <legend>Login</legend>
+        <label for="username">Who are you trainer?</label>
+        <input type="text"
+        ngModel
+        #username="ngModel"
+         name="username" id="username" placeholder="Misty"/>
+    </fieldset>
+    <button class="btn btn-primary" type="submit">Login</button>
+</form>

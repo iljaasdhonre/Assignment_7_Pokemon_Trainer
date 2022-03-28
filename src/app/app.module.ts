@@ -1,15 +1,18 @@
 import { AppRoutingModule } from './app-routing-module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { LoginPage } from './pages/login/login.page';
-import { ProfilePage } from './pages/profile/profile.page';
-import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogue.page';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PokemonCatalogueComponent } from './components/pokemon-catalogue/pokemon-catalogue.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
+
+import { LoginPage } from './pages/login/login.page';
+import { ProfilePage } from './pages/profile/profile.page';
+import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogue.page';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
