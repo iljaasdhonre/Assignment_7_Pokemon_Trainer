@@ -1,9 +1,7 @@
-import { StorageKeys } from './../enums/storage-keys.enum';
-import { StorageUtil } from './../utils/storage.util';
 import { environment } from './../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, of, switchMap, tap } from 'rxjs';
+import { map, Observable, of, switchMap } from 'rxjs';
 import { Trainer } from '../models/trainer';
 
 const {apiTrainers, apiKey} = environment;
@@ -25,9 +23,6 @@ export class LoginService {
               return this.createUser(username);
             }
             return of(trainer);
-          }),
-          tap((trainer: Trainer) => {
-            StorageUtil.storageSave<Trainer>(StorageKeys.Trainer, trainer);
           })
         )
     }
