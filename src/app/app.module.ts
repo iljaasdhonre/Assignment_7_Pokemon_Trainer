@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login-form.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileComponent } from './components/profile/trainer-profile.component';
 import { PokemonCatalogueComponent } from './components/pokemon-catalogue/pokemon-catalogue.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 
