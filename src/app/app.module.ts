@@ -13,6 +13,7 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { LoginPage } from './pages/login/login.page';
 import { ProfilePage } from './pages/profile/profile.page';
 import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogue.page';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogu
     LoginComponent,
     ProfileComponent,
     PokemonCatalogueComponent,
-    PokemonComponent
+    PokemonComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
