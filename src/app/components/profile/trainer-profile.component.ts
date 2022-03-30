@@ -19,11 +19,6 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     const trainer: Trainer = this.trainerService.trainer!;
     this.username = trainer.username;
-    // trainer.pokemon.map((pokemon) => {
-    //   this.pokemons.push(
-    //     {{name: pokemon}}
-    //   )
-    // })
+    this.pokemons = trainer.pokemon;
   }
-
 }
