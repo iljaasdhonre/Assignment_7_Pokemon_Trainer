@@ -1,1 +1,8 @@
 <p>pokemon-list works!</p>
+<p *ngIf="isLoading">Gotta fetch 'em all!</p>
+<ul>
+    <li *ngFor="let pokemon of pokemons">
+        {{pokemon.name}}
+        <img [src]="pokemon.url" [alt]="pokemon.name"/>
+    </li>
+</ul>

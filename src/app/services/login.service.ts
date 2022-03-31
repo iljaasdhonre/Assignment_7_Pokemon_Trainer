@@ -51,7 +51,6 @@ export class LoginService {
       return this.http.post<Trainer>(apiTrainers, trainer, {
         headers
       })
-
     }
   }
 
