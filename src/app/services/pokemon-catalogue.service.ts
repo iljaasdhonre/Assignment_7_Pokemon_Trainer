@@ -44,6 +44,7 @@ export class PokemonCatalogueService {
       next: (pokemons: Pokemon[]) =>{
         this._pokemons = pokemons;
         this._findPokemonsByName();
+        console.log(this._pokemonsWithId);
       },
       error:(error: HttpErrorResponse) => {
         this._error = error.message;
@@ -60,7 +61,9 @@ export class PokemonCatalogueService {
           return (
             this._pokemonsWithId.push({
             ...pokemon,
-            id: response.id}))
+            id: response.id,
+            url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${response.id}.png`
+          }))
         }
       })
     })
