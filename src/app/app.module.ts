@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login-form.component';
 import { ProfileComponent } from './components/profile/trainer-profile.component';
-import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon-list-item.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 
@@ -23,7 +23,7 @@ import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogu
     PokemonCataloguePage,
     LoginComponent,
     ProfileComponent,
-    PokemonComponent,
+    PokemonListItemComponent,
     NavbarComponent,
     PokemonListComponent
   ],

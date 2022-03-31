@@ -16,11 +16,12 @@ export class PokemonCatalogueService {
 
   private _limit = 20;
   private _pokemons: Pokemon[] = [];
+  private _pokemonsWithId: Pokemon[] = [];
   private _error: string = '';
   private _isLoading: boolean = false;
 
   get pokemons(): Pokemon[]{
-    return this._pokemons;
+    return this._pokemonsWithId;
   }
 
   get isLoading(): boolean{
@@ -34,20 +35,34 @@ export class PokemonCatalogueService {
     let queryParams = new HttpParams();
     queryParams = queryParams.append("limit", this._limit);
 
-    this.http.get<any>(apiPokemons, {params: queryParams}).
+    this.http.get<Pokemon[]>(apiPokemons, {params: queryParams}).
     pipe(
       map((response: any) => response.results),
       finalize(() => this._isLoading = false)
     ).
     subscribe({
       next: (pokemons: Pokemon[]) =>{
-        console.log(pokemons);
         this._pokemons = pokemons;
+        this._findPokemonsByName();
       },
       error:(error: HttpErrorResponse) => {
         this._error = error.message;
       }
     }
     )
+  }
+
+  private _findPokemonsByName(): void{
+    this._pokemons.forEach((pokemon) => {
+      this.http.get<Pokemon>(`${apiPokemons}/${pokemon.name}`).
+      subscribe({
+        next: (response: Pokemon) => {
+          return (
+            this._pokemonsWithId.push({
+            ...pokemon,
+            id: response.id}))
+        }
+      })
+    })
   }
 }
