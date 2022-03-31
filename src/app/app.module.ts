@@ -7,13 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login-form.component';
 import { ProfileComponent } from './components/profile/trainer-profile.component';
-import { PokemonCatalogueComponent } from './components/pokemon-catalogue/pokemon-catalogue.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 
 import { LoginPage } from './pages/login/login.page';
 import { ProfilePage } from './pages/profile/profile.page';
 import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogue.page';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +23,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     PokemonCataloguePage,
     LoginComponent,
     ProfileComponent,
-    PokemonCatalogueComponent,
     PokemonComponent,
-    NavbarComponent
+    NavbarComponent,
+    PokemonListComponent
   ],
   imports: [
     BrowserModule,
