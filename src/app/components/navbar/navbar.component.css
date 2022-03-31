@@ -2,3 +2,7 @@ li{
     float: right;
     padding-right: 16px;
 }
+
+nav{
+    z-index:1;
+}

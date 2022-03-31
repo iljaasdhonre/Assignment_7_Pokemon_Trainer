@@ -1,0 +1,12 @@
+<ul>
+    <li *ngIf="pokemon">
+        <div class="card">
+            <img [src]="pokemon.url" alt="Avatar not found" width="100px" height="100px">
+            <div class="container">
+              <h4><strong>{{pokemon.name}}</strong></h4>
+            </div>
+            <img class="pokebutton" src="../../../assets/pokeball.png" alt="catch pokemon" width="25" height="25" />
+          </div>
+    </li>
+</ul>
+
