@@ -31,6 +31,12 @@ export class PokemonCatalogueService {
   constructor(private readonly http: HttpClient) { }
 
   public findAllPokemons(): void{
+
+    if(this._pokemons.length > 0 || this._isLoading){
+      return;
+    }
+
+
     this._isLoading = true;
     let queryParams = new HttpParams();
     queryParams = queryParams.append("limit", this._limit);
