@@ -2,6 +2,8 @@ import { Pokemon } from './../../models/pokemon';
 import { Component, OnInit } from '@angular/core';
 import { Trainer } from 'src/app/models/trainer';
 import { TrainerService } from 'src/app/services/trainer.service';
+import { CatchPokemonService } from 'src/app/services/catch-pokemon.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-trainer-profile',
@@ -10,7 +12,9 @@ import { TrainerService } from 'src/app/services/trainer.service';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private readonly trainerService: TrainerService) { }
+  constructor(
+    private readonly catchPokemonService: CatchPokemonService,
+    private readonly trainerService: TrainerService) { }
 
   username: string = "";
   pokemons: Pokemon[] = [];
@@ -20,5 +24,18 @@ export class ProfileComponent implements OnInit {
     const trainer: Trainer = this.trainerService.trainer!;
     this.username = trainer.username;
     this.pokemons = trainer.pokemon;
+  }
+
+  setFree(pokemon: Pokemon){
+    pokemon.isCaught = false;
+    this.catchPokemonService.updateCaughtCollection(pokemon.id).
+    subscribe({
+      next: (trainer: Trainer) => {
+        pokemon.isCaught = this.trainerService.inCaughtCollection(pokemon.id);
+      },
+      error: (error: HttpErrorResponse) => {
+        console.log("ERROR", error.message);
+      }
+    });
   }
 }

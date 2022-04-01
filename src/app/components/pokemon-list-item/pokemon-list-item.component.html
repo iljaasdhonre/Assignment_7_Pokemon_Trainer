@@ -5,7 +5,9 @@
             <div class="container">
               <h4><strong>{{pokemon.name}}</strong></h4>
             </div>
-            <img class="pokebutton" src="../../../assets/pokeball-open.png" alt="catch pokemon" width="35" height="35" />
+            <aside>
+              <app-catch-button [pokemon]="pokemon"></app-catch-button>
+            </aside>
           </div>
     </li>
 </ul>

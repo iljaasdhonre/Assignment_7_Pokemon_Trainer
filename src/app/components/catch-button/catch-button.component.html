@@ -1,0 +1,7 @@
+
+    <button *ngIf="!isCaught" (click)="catchPokemon()">
+      <img  class="pokebutton" src="../../../assets/images/pokeball-open.png" alt="catch pokemon" width="35" height="35" />
+    </button>
+    <div *ngIf="isCaught">
+      <img  class="pokebutton" src="../../../assets/images/pokeball.png" alt="catch pokemon" width="35" height="35" />               
+    </div>

@@ -54,6 +54,7 @@ export class PokemonCatalogueService {
   }
 
   private _findPokemonsByName(): void{
+    this._pokemonsWithId = [];
     this._pokemons.forEach((pokemon) => {
       this.http.get<Pokemon>(`${apiPokemons}/${pokemon.name}`).
       subscribe({
@@ -67,5 +68,9 @@ export class PokemonCatalogueService {
         }
       })
     })
+  }
+
+  public pokemonById(id: number): Pokemon | undefined {
+    return this._pokemonsWithId.find((pokemon: Pokemon) => pokemon.id === id )
   }
 }

@@ -14,6 +14,7 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { LoginPage } from './pages/login/login.page';
 import { ProfilePage } from './pages/profile/profile.page';
 import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogue.page';
+import { CatchButtonComponent } from './components/catch-button/catch-button.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogu
     ProfileComponent,
     PokemonListItemComponent,
     NavbarComponent,
-    PokemonListComponent
+    PokemonListComponent,
+    CatchButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,10 @@
 <h1>{{username}}</h1>
-<ul>
-    <li *ngFor="let pokemon of pokemons">
-        {{pokemon}}
-    </li>
-</ul>
+
+<div *ngFor="let pokemon of pokemons">
+    <div *ngIf="pokemon.isCaught">
+        <app-pokemon-list-item   [pokemon]="pokemon">
+        </app-pokemon-list-item>
+        <button (click)="setFree(pokemon)">Set this pokemon free</button>
+    </div>
+</div>
+
