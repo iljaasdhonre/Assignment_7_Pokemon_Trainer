@@ -30,8 +30,8 @@ You may also see any lint errors in the console.
 
 - Login by any username you like.
 - Catch the pokemon on the Pokemons page.
-- You pokemon are stored in the My trainer page.
-- By clicking on the 'Set this pokemon free' your pokemon will be released.
+- Your pokemon are stored on the My collection page.
+- By clicking on the 'Free pokemon' button your pokemon will be released.
 - ENJOY!
 
 ## Contributors
