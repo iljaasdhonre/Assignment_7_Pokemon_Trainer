@@ -1,11 +1,11 @@
 export class StorageUtil{
 
     public static storageSave<T>(key: string, value: T): void{
-        localStorage.setItem(key, JSON.stringify(value));
+        sessionStorage.setItem(key, JSON.stringify(value));
     }
     
     public static storageRead<T>(key: string): T | undefined {
-        const storedValue = localStorage.getItem(key);
+        const storedValue = sessionStorage.getItem(key);
         try{
             if(storedValue){
                 return JSON.parse(storedValue) as T;
@@ -13,12 +13,12 @@ export class StorageUtil{
                 return undefined; 
         }
         catch(e){
-            localStorage.removeItem(key);
+            sessionStorage.removeItem(key);
             return undefined;
         }
     }
 
     public static storageDelete(key: string){
-        localStorage.removeItem(key);
+        sessionStorage.removeItem(key);
     }
 }

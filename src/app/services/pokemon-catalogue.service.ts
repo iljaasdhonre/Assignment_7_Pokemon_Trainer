@@ -14,7 +14,7 @@ const {apiPokemons} = environment;
 
 export class PokemonCatalogueService {
 
-  private _limit = 20;
+  private _limit = 151;
   private _pokemons: Pokemon[] = [];
   private _pokemonsWithId: Pokemon[] = [];
   private _error: string = '';
