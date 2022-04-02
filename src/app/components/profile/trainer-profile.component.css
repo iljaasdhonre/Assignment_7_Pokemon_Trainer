@@ -1,0 +1,8 @@
+aside{
+   float: right;
+   margin-bottom: 30px;
+}
+
+.pokemon-item{
+    clear: both;
+}

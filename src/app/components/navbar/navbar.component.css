@@ -1,8 +1,10 @@
 li{
     float: right;
     padding-right: 16px;
+    margin-top: 12px;
 }
 
 nav{
     z-index:1;
+    padding: 16px 0px 0px 16px;
 }
