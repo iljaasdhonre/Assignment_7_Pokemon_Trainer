@@ -17,14 +17,13 @@ export class TrainerService {
   }
 
   set trainer(trainer: Trainer | undefined){
-    StorageUtil.storageSave<Trainer>(StorageKeys.Trainer, trainer!);
+    StorageUtil.localStorageSave<Trainer>(StorageKeys.Trainer, trainer!);
     this._trainer = trainer;
   }
 
-  deleteStorage(){
-    StorageUtil.storageDelete(StorageKeys.Trainer);
-    this._trainer = undefined;
-  }
+  constructor(private readonly http: HttpClient) {
+      this._trainer = StorageUtil.localStorageRead<Trainer>(StorageKeys.Trainer);
+    }
 
   public inCaughtCollection(pokemonId: number){
     if(this._trainer){
@@ -46,8 +45,9 @@ export class TrainerService {
       filter((pokemon: Pokemon) => pokemon.id !== pokemonId);
     }
   }
-
-  constructor(private readonly http: HttpClient) {
-    this._trainer = StorageUtil.storageRead<Trainer>(StorageKeys.Trainer);
-   }
+  
+  deleteStorage(){
+    StorageUtil.localStorageDelete(StorageKeys.Trainer);
+    this._trainer = undefined;
+  }
 }
