@@ -25,7 +25,7 @@ export class LoginService {
             return of(trainer);
           }),
           tap((trainer: Trainer) =>{
-
+            console.log("Tap trainer: " + trainer)
           })
 
         )
